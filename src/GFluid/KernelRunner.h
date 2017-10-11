@@ -20,7 +20,8 @@
 
 #pragma once
 
-#include <GCompute/ClIncludes.h>
+//#include <GCompute/ClIncludes.h>
+#include "CL/cl.hpp"
 
 namespace GFluid {
 

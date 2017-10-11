@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#include "ClIncludes.h"
+//#include "ClIncludes.h"
 #include "ClSystem.h"
 #include "ClError.h"
 #include <GCommon/Logger.h>
@@ -29,6 +29,7 @@
 #include <fstream>
 
 #include "Context.h"
+#include "CL/cl.hpp"
 
 using namespace GCommon;
 
@@ -60,7 +61,7 @@ void ClSystem::loadProgram(cl::Program& program, const std::string &filename) co
 	cl_int err;
 
     defaultLogger()->logLine("Loading and compiling CL source");
-	std::ifstream file(filename);
+	std::ifstream file(filename.c_str());
 	if (!file.is_open())
 	{
          throw std::runtime_error("Could not load CL source code file: " + filename);
@@ -81,7 +82,7 @@ void ClSystem::loadProgram(cl::Program& program, const std::string &filename) co
 
         if(err == CL_BUILD_PROGRAM_FAILURE)
         {
-            cl::string str = program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(m_devices[0]);
+            std::string str = program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(m_devices[0]);
 
             defaultLogger()->logLine(" \n\t\t\tBUILD LOG");
             defaultLogger()->logLine(" ************************************************");

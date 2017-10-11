@@ -24,7 +24,8 @@
 #include <stdexcept>
 
 #include <boost/scoped_array.hpp>
-
+#include <string.h>
+#include <stdio.h>
 namespace GVis {
 
 #define FOURCC_DXT1 0x31545844 // Equivalent to "DXT1" in ASCII

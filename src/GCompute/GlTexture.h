@@ -18,6 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#include <GL/gl.h>
+#include <GL/glut.h>
 
 namespace GCompute {
 #pragma once

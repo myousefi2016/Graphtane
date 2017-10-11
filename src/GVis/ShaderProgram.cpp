@@ -44,7 +44,7 @@ using namespace std;
 
 static void loadFile(std::string& outString, const std::string& filepath)
 {
-	std::ifstream stream(filepath, std::ios::in);
+	std::ifstream stream(filepath.c_str(), std::ios::in);
 	if(stream.is_open())
 	{
 		std::string Line = "";

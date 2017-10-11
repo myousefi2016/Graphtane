@@ -24,8 +24,16 @@
 #include "TempBufferPool.h"
 #include <GCompute/ClSystem.h>
 #include <GCompute/GlTexture.h>
+#include <GL/gl.h>
+#include <GL/glut.h>
 
 #include <string>
+
+#if !defined(CL_VERSION_1_2)
+#define IMAGE_GL_CLASS cl::Image2DGL
+#else
+#define IMAGE_GL_CLASS cl::ImageGL
+#endif
 
 using namespace GCompute;
 
@@ -51,7 +59,7 @@ public:
 		ClSystem::createKernel(m_kernel_downScale2x, program, "downScale2x");
 
 		cl_int err;
-		m_normalImageBuffer = ImageGlType(system._getContext(), CL_MEM_WRITE_ONLY, normalTexture.target, 0, normalTexture.textureId, &err);
+		m_normalImageBuffer = IMAGE_GL_CLASS(system._getContext(), CL_MEM_WRITE_ONLY, normalTexture.target, 0, normalTexture.textureId, &err);
 		checkError(err);
 
 
@@ -92,7 +100,7 @@ private:
 	boost::scoped_ptr<KernelRunner> m_fullSizeKernelRunner;
 	boost::scoped_ptr<KernelRunner> m_halfSizeKernelRunner;
 
-	ImageGlType m_normalImageBuffer;
+	IMAGE_GL_CLASS m_normalImageBuffer;
 	BufferProviderPtr m_densityBufferProvider;
 	TempBufferPoolPtr m_tempBufferPool;
 };

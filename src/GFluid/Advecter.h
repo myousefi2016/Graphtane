@@ -21,7 +21,8 @@
 #pragma once
 
 #include "GFluidFwd.h"
-#include <GCompute/ClIncludes.h>
+//#include <GCompute/ClIncludes.h>
+#include "CL/cl.hpp"
 
 namespace GFluid {
 

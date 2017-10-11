@@ -21,7 +21,7 @@
 #pragma once
 
 #define GLM_FORCE_RADIANS
-
+#define GLM_ENABLE_EXPERIMENTAL
 #include "GVisFwd.h"
 #include <glm/glm.hpp>
 #include <glm/gtx/quaternion.hpp>

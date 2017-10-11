@@ -23,7 +23,7 @@
 #include "../GVisFwd.h"
 #include "ColorSpace.h"
 #include <string>
-
+#include <stdio.h>
 namespace GVis {
 
 class DdsLoader

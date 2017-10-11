@@ -20,8 +20,9 @@
 
 #pragma once
 
-#include "ClIncludes.h"
+//#include "ClIncludes.h"
 #include "GComputeFwd.h"
+#include "CL/cl.hpp"
 
 namespace GCompute {
 

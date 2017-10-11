@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 
 #include "Technique.h"
-#include "sceneNode.h"
 #include "ShaderProgram.h"
 #include "ShaderParameter.h"
 #include "Camera.h"

@@ -19,8 +19,9 @@
 // THE SOFTWARE.
 
 #include "TempBufferPool.h"
-#include <GCompute/ClIncludes.h>
+//#include <GCompute/ClIncludes.h>
 #include <GCompute/ClSystem.h>
+#include "CL/cl.hpp"
 
 using namespace GCompute;
 

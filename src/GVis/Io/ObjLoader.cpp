@@ -61,7 +61,7 @@ void ObjLoader::load(MeshData& outData, const std::string& filename)
 {
 	std::stringstream buffer;
 	{
-		std::ifstream file(filename);
+		std::ifstream file(filename.c_str());
 
 		if(!file.is_open())
 		{
